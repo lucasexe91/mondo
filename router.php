@@ -25,7 +25,7 @@
         $controlador->mostrarproducto($urlParts[1]);
         break;
       default:
-        echo '<h1> Error 404 :´c </h1>';
+        echo '<h1> Error 404 </h1>';
         break;
   }
 
