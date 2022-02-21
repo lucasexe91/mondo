@@ -22,6 +22,24 @@ class Control {
         $this->visor->show($producto);
     }
 
+    function nuevo(){
+        $this->visor->nuevo();
+    }
+
+    function guardar(){
+        $nombre = $_POST['nombre'];
+        $modo = $_POST['modo'];
+        $composicion = $_POST['composicion'];
+        $descripcion = $_POST['descripcion'];
+
+        if($_FILES['imagen']['type'] == "image/jpg" || $_FILES['imagen']['type'] == "image/jpeg" || $_FILES['imagen']['type'] == "image/png"){
+            $this->modelador->nuevo($nombre,$modo,$composicion,$descripcion,  $_FILES['imagen']['tmp_name']);
+            header("Location: " . BASE_URL . 'panel');
+        } else {
+            $this->modelador->nuevo($nombre,$modo,$composicion,$descripcion);
+        header("Location: " . BASE_URL . 'panel');}
+    }
+
 }
 
 

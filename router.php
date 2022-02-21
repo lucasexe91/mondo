@@ -34,7 +34,10 @@
         //para hacer
         break;
       case 'nuevo':
-        //para hacer
+        $controlador->nuevo();
+        break;
+      case 'guardar':
+        $controlador->guardar();
         break;
       case 'logout':
         $controlasesion->logout();

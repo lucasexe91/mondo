@@ -38,7 +38,7 @@
                 <div class="btn-group" role="group">
                     <a href="producto/{$prod->id}" class="btn btn-outline-success">Ver producto</a>
                     <a href="editar/{$prod->id}" class="btn btn-outline-success">Editar</a>
-                    <a href="borrar/{$prod->id}" class="btn btn-outline-success">Borrar</a>
+                    <a href="borrar/{$prod->id}" class="btn btn-outline-danger">Borrar</a>
                 </div>
               </div>
             </div>
