@@ -6,15 +6,18 @@ class vistaadmin extends Visor{
 
     public function __construct(){
         parent::__construct();
+        $authHelper = new AuthHelper();
+        $username = $authHelper->getLoggedUserName();
+        $this->getSmarty()->assign('username', $username);
     }
 
-    //muestra un libro especifico
     function showlogin($error=null){
         $this->getSmarty()->assign('error', $error);
         $this->getSmarty()->display('templates/login.tpl');
     }
 
-    function showpanel(){
+    function showpanel($productos){
+        $this->getSmarty()->assign('productos', $productos);
         $this->getSmarty()->display('templates/panel.tpl');
     }
 }

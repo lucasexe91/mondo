@@ -1,12 +1,14 @@
 <?php
     include_once 'vista/vistaadmin.php';
     include_once 'modelo/modelosesion.php';
+    include_once 'modelo/Modeloproducto.php';
 
     class controlsesion{
 
         public function __construct(){
             $this->modelosesion = new modelosesion();
             $this->vistaadmin = new vistaadmin();
+            $this->modeloproducto = new modeloproducto();
         }
 
         public function mostrarlogin(){
@@ -14,7 +16,17 @@
         }
 
         public function mostrarpanel(){
-            $this->vistaadmin->showpanel();
+            if (!isset($_SESSION['USERNAME'])){
+                $this->vistaadmin->showlogin();
+            }else{
+                $productos = $this->modeloproducto->getAll();
+                $this->vistaadmin->showpanel($productos);
+            }      
+        }
+
+        public function logout(){
+            AuthHelper::logout();
+            header("Location: " . BASE_URL . 'home');
         }
 
 

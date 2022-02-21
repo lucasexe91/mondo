@@ -24,6 +24,21 @@
       case 'producto':
         $controlador->mostrarproducto($urlParts[1]);
         break;
+      case 'buscar':
+        //para hacer
+        break;
+      case 'editar':
+        //para hacer
+        break;
+      case 'borrar':
+        //para hacer
+        break;
+      case 'nuevo':
+        //para hacer
+        break;
+      case 'logout':
+        $controlasesion->logout();
+        break;
       default:
         echo '<h1> Error 404 </h1>';
         break;
