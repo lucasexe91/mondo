@@ -22,10 +22,18 @@ class Control {
         $this->visor->show($producto);
     }
 
+    //busca producto por nombre
+    function buscanombre(){
+        $nombre = $_POST[''];  //falta tpl (?)
+        $producto = $this->modeloproducto->getproducto($nombre);
+        $this->vistaproducto->show($producto);
+    }
+
     function nuevo(){
         $this->visor->nuevo();
     }
-
+    
+    //guarda un nuevo producto
     function guardar(){
         $nombre = $_POST['nombre'];
         $modo = $_POST['modo'];
@@ -38,6 +46,24 @@ class Control {
         } else {
             $this->modelador->nuevo($nombre,$modo,$composicion,$descripcion);
         header("Location: " . BASE_URL . 'panel');}
+    }
+
+    // Desde aca faltan tpls :v (de nada (?))
+
+    //borra un productos por id
+    function borrar($id){
+        $query = $this->getDb()->prepare('DELETE FROM productos WHERE id = ?');
+        $query->execute([$id]);
+    }
+
+    //modifica un producto
+    function modificar($id,$nombre,$modo,$composicion,$descripcion,$image = NULL){
+        $pathImg = null;
+        if ($image)
+            $pathImg = $this->uploadImage($image);
+
+        $query = $this-> getDb()->prepare('UPDATE productos SET nombre = ?, modo = ?, composicion = ?, descripcion = ?, imagen = ? WHERE id = ?');
+        $query->execute([$nombre,$modo,$composicion,$descripcion,$pathImg,$id]);
     }
 
 }

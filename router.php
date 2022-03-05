@@ -25,13 +25,13 @@
         $controlador->mostrarproducto($urlParts[1]);
         break;
       case 'buscar':
-        //para hacer
+        $controlador->buscanombre();  //nombre por POST
         break;
       case 'editar':
-        //para hacer
+        $controlador->modificar($urlParts[1]);  //nuevo falta tpl
         break;
       case 'borrar':
-        //para hacer
+        $controlador->borrar($urlParts[1]);  //nuevo falta tpl
         break;
       case 'nuevo':
         $controlador->nuevo();

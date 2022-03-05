@@ -18,6 +18,14 @@ class modeloproducto extends Modelo {
         return $query->fetch(PDO::FETCH_OBJ);
     }
 
+    //recupera el producto por nombre
+    function getproducto($nombre){
+        $query = $this-> getDb()->prepare('SELECT * FROM productos WHERE nombre = ?');
+        $query->execute([$nombre]);
+        return $query->fetch(PDO::FETCH_OBJ);
+    }
+
+
     //crea un producto nuevo
     function nuevo($nombre,$modo,$composicion,$descripcion,$image = NULL){
         $pathImg = null;
@@ -34,5 +42,6 @@ class modeloproducto extends Modelo {
         move_uploaded_file($image, $target);
         return $target;
     }
+
 }
 ?>
