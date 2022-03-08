@@ -16,5 +16,9 @@ class vistaproducto extends Visor{
     function nuevo(){
         $this->getSmarty()->display('templates/nuevo.tpl');
     }
+    function showeditar($producto){
+        $this->getSmarty()->assign('producto', $producto);
+        $this->getSmarty()->display('templates/editar.tpl');
+    }
 }
 ?>

@@ -48,25 +48,35 @@ class Control {
         header("Location: " . BASE_URL . 'panel');}
     }
 
-    // Desde aca faltan tpls :v (de nada (?))
-
     //borra un productos por id
     function borrar($id){
-        $query = $this->getDb()->prepare('DELETE FROM productos WHERE id = ?');
-        $query->execute([$id]);
+        $this->modelador->borrar($id);
+        header("Location: " . BASE_URL . 'panel');
     }
 
-    //modifica un producto
-    function modificar($id,$nombre,$modo,$composicion,$descripcion,$image = NULL){
-        $pathImg = null;
-        if ($image)
-            $pathImg = $this->uploadImage($image);
+    //muestra editar para un producto
+    function editar($id){
+        $producto = $this->modelador->get($id);
+        $this->visor->showeditar($producto);
+    }
 
-        $query = $this-> getDb()->prepare('UPDATE productos SET nombre = ?, modo = ?, composicion = ?, descripcion = ?, imagen = ? WHERE id = ?');
-        $query->execute([$nombre,$modo,$composicion,$descripcion,$pathImg,$id]);
+    //guarda un producto editado
+    function modificar($id){
+        $nombre = $_POST['nombre'];
+        $modo = $_POST['modo'];
+        $composicion = $_POST['composicion'];
+        $descripcion = $_POST['descripcion'];
+
+        if($_FILES['imagen']['type'] == "image/jpg" || $_FILES['imagen']['type'] == "image/jpeg" || $_FILES['imagen']['type'] == "image/png"){
+            $this->modelador->guardarmodificado($id,$nombre,$modo,$composicion,$descripcion,  $_FILES['imagen']['tmp_name']);
+            header("Location: " . BASE_URL . 'panel');
+        } else {
+            $this->modelador->guardarmodificado($id,$nombre,$modo,$composicion,$descripcion);
+        header("Location: " . BASE_URL . 'panel');}
     }
 
 }
+
 
 
 ?>

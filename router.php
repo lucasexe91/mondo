@@ -28,7 +28,10 @@
         $controlador->buscanombre();  //nombre por POST
         break;
       case 'editar':
-        $controlador->modificar($urlParts[1]);  //nuevo falta tpl
+        $controlador->editar($urlParts[1]);  //llama al tpl editar
+        break;
+      case 'modificar':
+        $controlador->modificar($urlParts[1]); //guarda un producto modificado
         break;
       case 'borrar':
         $controlador->borrar($urlParts[1]);  //nuevo falta tpl
@@ -46,5 +49,6 @@
         echo '<h1> Error 404 </h1>';
         break;
   }
+
 
 ?>
