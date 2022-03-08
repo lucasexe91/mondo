@@ -36,6 +36,7 @@ class modeloproducto extends Modelo {
         $query->execute([$nombre,$modo,$composicion,$descripcion,$pathImg]);
     }
 
+    //guarda un producto por id
     function guardarmodificado($id,$nombre,$modo,$composicion,$descripcion,$image = NULL){
         $pathImg = null;
         if ($image)
@@ -52,6 +53,7 @@ class modeloproducto extends Modelo {
         return $target;
     }
 
+    //borra un producto por id
     function borrar($id){
         $query = $this->getDb()->prepare('DELETE FROM productos WHERE id = ?');
         $query->execute([$id]);

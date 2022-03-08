@@ -13,16 +13,16 @@
 
   switch($urlParts[0]){
       case 'home':
-        $controlasesion->mostrarlogin();
+        $controlasesion->mostrarlogin(); //muestra logueo
         break;
       case 'panel':
-        $controlasesion->mostrarpanel();
+        $controlasesion->mostrarpanel(); //muestra panel de admin
         break;
       case 'verify':
-        $controlasesion->verify();
+        $controlasesion->verify(); //verifica datos de logueo
         break;
       case 'producto':
-        $controlador->mostrarproducto($urlParts[1]);
+        $controlador->mostrarproducto($urlParts[1]); //muestra un producto por id
         break;
       case 'buscar':
         $controlador->buscanombre();  //nombre por POST
@@ -37,13 +37,13 @@
         $controlador->borrar($urlParts[1]);  //nuevo falta tpl
         break;
       case 'nuevo':
-        $controlador->nuevo();
+        $controlador->nuevo(); //muestra el formulario de producto nuevo
         break;
       case 'guardar':
-        $controlador->guardar();
+        $controlador->guardar(); //guarda un producto nuevo
         break;
       case 'logout':
-        $controlasesion->logout();
+        $controlasesion->logout(); //cierra la sesion activa
         break;
       default:
         echo '<h1> Error 404 </h1>';

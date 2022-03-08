@@ -29,6 +29,7 @@ class Control {
         $this->vistaproducto->show($producto);
     }
 
+    //muestra el formulario de producto nuevo
     function nuevo(){
         $this->visor->nuevo();
     }
