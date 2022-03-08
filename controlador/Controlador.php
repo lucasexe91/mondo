@@ -22,13 +22,6 @@ class Control {
         $this->visor->show($producto);
     }
 
-    //busca producto por nombre
-    function buscanombre(){
-        $nombre = $_POST[''];  //falta tpl (?)
-        $producto = $this->modeloproducto->getproducto($nombre);
-        $this->vistaproducto->show($producto);
-    }
-
     //muestra el formulario de producto nuevo
     function nuevo(){
         $this->visor->nuevo();

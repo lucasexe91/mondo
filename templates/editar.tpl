@@ -1,22 +1,22 @@
 {include 'templates/header.tpl'}
-<br><br>   
+
+<br><br>
     <div class="container">
     <div class="row justify-content-md-center">
-        <div class="col">        
-            <div class="card" style="width: 18rem;">
-              <img class="w-80 p-3" src="{$producto->imagen}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">{$producto->nombre}</h5>
-                <p class="card-text">{$producto->composicion}</p>
-                <p class="card-text">{$producto->mododeuso}</p>
-                <p class="card-text">{$producto->descripcion}</p>
-              </div>
-            </div>
+        <div class="col clearfix">
+            <img class="col-md-6 mb-3 ms-md-3" src="{$producto->imagen}" style="width: 400px;" alt="...">
+            <h1>{$producto->nombre}</h5>
+            <h5>Composición</h5>
+            <p class="card-text">{$producto->composicion}</p>
+            <h5>Modo de uso</h5>
+            <p class="card-text">{$producto->mododeuso}</p>
+            <h5>Descripción del producto</h5>
+            <p class="card-text">{$producto->descripcion}</p>
         </div>
         <div class="col">
+            <br>
             <form action="modificar/{$producto->id}" method="POST" enctype="multipart/form-data">
-                <br>
-                <br>
+                
                 <div class="form-floating mb-3">
                     <input type="nombre" class="form-control" id="floatingInput" placeholder="Nombre" name="nombre">
                     <label for="floatingInput">Nombre</label>

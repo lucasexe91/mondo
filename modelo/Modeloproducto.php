@@ -20,11 +20,11 @@ class modeloproducto extends Modelo {
 
     //recupera el producto por nombre
     function getproducto($nombre){
-        $query = $this-> getDb()->prepare('SELECT * FROM productos WHERE nombre = ?');
-        $query->execute([$nombre]);
-        return $query->fetch(PDO::FETCH_OBJ);
+        $texto = "%".$nombre."%";
+        $query = $this-> getDb()->prepare('SELECT * FROM productos WHERE nombre LIKE ?');
+        $query->execute([$texto]);
+        return $query->fetchAll(PDO::FETCH_OBJ);
     }
-
 
     //crea un producto nuevo
     function nuevo($nombre,$modo,$composicion,$descripcion,$image = NULL){

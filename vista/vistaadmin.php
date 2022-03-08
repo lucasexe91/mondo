@@ -20,5 +20,8 @@ class vistaadmin extends Visor{
         $this->getSmarty()->assign('productos', $productos);
         $this->getSmarty()->display('templates/panel.tpl');
     }
+    function nosencontro(){
+        $this->getSmarty()->display('templates/404.tpl');
+    }
 }
 ?>

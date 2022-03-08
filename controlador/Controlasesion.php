@@ -24,6 +24,22 @@
             }      
         }
 
+        //busca producto por nombre
+        function buscanombre(){
+            if (!isset($_SESSION['USERNAME'])){
+                $this->vistaadmin->showlogin();
+            }else{
+            $nombre = $_POST['nombre'];
+            $producto = $this->modeloproducto->getproducto($nombre);
+            if($producto == null){
+                $this->vistaadmin->nosencontro();
+            }else{
+                $this->vistaadmin->showpanel($producto);
+            }
+            
+            }
+        }
+
         public function logout(){
             AuthHelper::logout();
             header("Location: " . BASE_URL . 'home');

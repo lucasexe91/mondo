@@ -25,7 +25,7 @@
         $controlador->mostrarproducto($urlParts[1]); //muestra un producto por id
         break;
       case 'buscar':
-        $controlador->buscanombre();  //nombre por POST
+        $controlasesion->buscanombre();  //nombre por POST
         break;
       case 'editar':
         $controlador->editar($urlParts[1]);  //llama al tpl editar
@@ -49,6 +49,5 @@
         echo '<h1> Error 404 </h1>';
         break;
   }
-
 
 ?>
