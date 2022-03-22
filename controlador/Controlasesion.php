@@ -45,6 +45,10 @@
             header("Location: " . BASE_URL . 'home');
         }
 
+        public function qr($id){
+            $qr = $this->modelosesion->generarQr($id);
+            $this->vistaadmin->mostrarQr($qr);
+        }
 
         public function verify() {
             if(!empty($_POST['username']) && !empty($_POST['password'])) {

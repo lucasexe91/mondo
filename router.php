@@ -27,6 +27,9 @@
       case 'buscar':
         $controlasesion->buscanombre();  //nombre por POST
         break;
+      case 'qr':
+        $controlasesion->qr($urlParts[1]);  //genera qr >:c
+        break;
       case 'editar':
         $controlador->editar($urlParts[1]);  //llama al tpl editar
         break;

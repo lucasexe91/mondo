@@ -1,5 +1,5 @@
 <?php
-
+require_once('libs/phpqrcode.php');
 require_once('Modelo.php');
 
 class modelosesion extends Modelo {
@@ -26,5 +26,9 @@ class modelosesion extends Modelo {
                                             VALUES (?, ?)');
         $query->execute([$passEnc, $user]);
 
+    }
+
+    public function generarQr($id){
+        QRcode::png("localhost/mondo/producto".$id);
     }
 }
