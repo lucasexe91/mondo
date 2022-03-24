@@ -1,5 +1,5 @@
 <?php
-require_once('libs/phpqrcode.php');
+require_once('libs/phpqrcode/qrlib.php');
 require_once('Modelo.php');
 
 class modelosesion extends Modelo {
@@ -28,7 +28,8 @@ class modelosesion extends Modelo {
 
     }
 
-    public function generarQr($id){
-        QRcode::png("localhost/mondo/producto".$id);
+    public function generarQr($id,$tamanio,$calidad,$margen){
+        QRcode::png("localhost/mondo/producto".$id,false,$calidad,$tamanio,$margen);
+        //QRCode::png(url, false, q, tamaño, margen);
     }
 }

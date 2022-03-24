@@ -46,7 +46,10 @@
         }
 
         public function qr($id){
-            $qr = $this->modelosesion->generarQr($id);
+            $tamanio = $_POST['tamanio'];
+            $calidad = $_POST['calidad'];
+            $margen = $_POST['margen'];
+            $qr = $this->modelosesion->generarQr($id,$tamanio,$calidad,$margen);
             $this->vistaadmin->mostrarQr($qr);
         }
 

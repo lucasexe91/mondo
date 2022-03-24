@@ -41,11 +41,41 @@
                 <div class="btn-group" role="group">
                     <a href="producto/{$prod->id}" class="btn btn-outline-success">Ver</a>
                     <a href="editar/{$prod->id}" class="btn btn-outline-success">Editar</a>
-                    <a href="qr/{$prod->id}" class="btn btn-outline-success">Generar QR!</a>
+                    
                     <a href="borrar/{$prod->id}" class="btn btn-outline-danger">Borrar</a>
                 </div>
               </div>
             </div>
+            <form action="qr/{$prod->id}" method="POST" class="d-flex">
+                  <select name="calidad" class="form-select" aria-label="Calidad">
+                    <option value="L">Calidad</option>
+                    <option value="L">L</option>
+                    <option value="M">M</option>
+                    <option value="Q">Q</option>
+                    <option value="H">H</option>
+                  </select>
+                  <select name="tamanio" class="form-select" aria-label="Tamaño">
+                    <option value="1">Tamaño</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                  <select name="margen" class="form-select" aria-label="Margen">
+                    <option value="1">Margen</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                  <button class="btn btn-outline-success" type="submit">QR</button>
+                </form>
           </div>
         {/foreach}
     </div>
