@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-02-2022 a las 21:21:57
+-- Tiempo de generación: 20-04-2022 a las 21:17:21
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.1
 
@@ -32,17 +32,18 @@ CREATE TABLE `productos` (
   `nombre` varchar(250) NOT NULL,
   `mododeuso` varchar(500) DEFAULT NULL,
   `composicion` varchar(500) DEFAULT NULL,
-  `fechaelaboracion` date DEFAULT NULL,
   `imagen` varchar(100) DEFAULT NULL,
-  `descripcion` varchar(500) DEFAULT NULL
+  `descripcion` varchar(500) DEFAULT NULL,
+  `advertencias` varchar(500) NOT NULL,
+  `caducidad` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `productos`
 --
 
-INSERT INTO `productos` (`id`, `nombre`, `mododeuso`, `composicion`, `fechaelaboracion`, `imagen`, `descripcion`) VALUES
-(2, 'Crema Humectante Piel Seca - Manzanilla Sándalo', 'Aplicar dos veces por dia en el rostro y cuello con leves masajes ascendente. Uso externo. Advertencia, si observa alguna reacción desfavorable suspenda su uso. Si la reacción persiste consulte a su médico', 'Agua, Agua de Rosas, Aceite de Palta, Aceite de Rosa Mosqueta, Glicerina vegetal grado USP,  Olivem 1000 (Cetearyl Olivate and Sorbitan Olivate, emulsiontante), ALcohol estearilico(estabilizante), Euxyl PE 9010 (Phenoxyethanol y Ethylhexylglicerin, conservante), Aceites esenciales de Manzanilla y Sándalo. Puede contener pequeñas cantidades de ácido cítrico y/o bicarbonato de sodio', '2022-02-09', 'images/producto2.jpg', 'Consumir dentro de los 60 días posteriores a la fecha de elaboración');
+INSERT INTO `productos` (`id`, `nombre`, `mododeuso`, `composicion`, `imagen`, `descripcion`, `advertencias`, `caducidad`) VALUES
+(2, 'Crema Humectante Piel Seca - Manzanilla Sándalo', 'Aplicar dos veces por dia en el rostro y cuello con leves masajes ascendente. Uso externo. Advertencia, si observa alguna reacción desfavorable suspenda su uso. Si la reacción persiste consulte a su médico', 'Agua, Agua de Rosas, Aceite de Palta, Aceite de Rosa Mosqueta, Glicerina vegetal grado USP, Olivem 1000 (Cetearyl Olivate and Sorbitan Olivate, emulsiontante), ALcohol estearilico(estabilizante), Euxyl PE 9010 (Phenoxyethanol y Ethylhexylglicerin, conservante), Aceites esenciales de Manzanilla y Sándalo. Puede contener pequeñas cantidades de ácido cítrico y/o bicarbonato de sodio', 'images/623cb8969126c.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit elit id consequat tempor. Vestibulum vitae nibh id ante accumsan sollicitudin at vel elit. Praesent viverra, magna ut tempor tristique, velit justo hendrerit lacus, sit amet auctor nunc lacus vitae felis. Etiam pharetra elit quis pellentesque bibendum. Duis diam mauris, molestie interdum aliquet vitae, posuere eget dolor. Praesent feugiat, eros at feugiat porttitor, dui magna volutpat risus, sit amet convallis ex metus', 'Evitar el contacto con ojos y piel irritada', 'Ver envase');
 
 -- --------------------------------------------------------
 
@@ -87,7 +88,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
