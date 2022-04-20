@@ -37,7 +37,7 @@
         $controlador->modificar($urlParts[1]); //guarda un producto modificado
         break;
       case 'borrar':
-        $controlador->borrar($urlParts[1]);  //nuevo falta tpl
+        $controlador->borrar($urlParts[1]);  
         break;
       case 'nuevo':
         $controlador->nuevo(); //muestra el formulario de producto nuevo

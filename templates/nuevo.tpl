@@ -22,6 +22,14 @@
                 <textarea type="descripcion" class="form-control" id="floatingTextarea2"  placeholder="Descripción" name="descripcion" style="height: 100px"></textarea>
                 <label for="floatingInput">Descripción</label>
             </div>
+            <div class="form-floating mb-3">
+                    <textarea type="advertencias" class="form-control" id="floatingTextarea2"  placeholder="Advertencias" name="advertencias" style="height: 100px"></textarea>
+                    <label for="floatingInput">Advertencias</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea type="caducidad" class="form-control" id="floatingTextarea2"  placeholder="Caducidad" name="caducidad" style="height: 100px"></textarea>
+                    <label for="floatingInput">Caducidad</label>
+                </div>
             <div class="mb-3">
                 <label for="formFile" class="form-label">Imagen</label>
                 <input class="form-control" type="file" id="formFile" name="imagen">

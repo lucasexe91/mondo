@@ -33,12 +33,14 @@ class Control {
         $modo = $_POST['modo'];
         $composicion = $_POST['composicion'];
         $descripcion = $_POST['descripcion'];
+        $advertencias = $_POST['advertencias'];
+        $caducidad = $_POST['caducidad'];
 
         if($_FILES['imagen']['type'] == "image/jpg" || $_FILES['imagen']['type'] == "image/jpeg" || $_FILES['imagen']['type'] == "image/png"){
-            $this->modelador->nuevo($nombre,$modo,$composicion,$descripcion,  $_FILES['imagen']['tmp_name']);
+            $this->modelador->nuevo($nombre,$modo,$composicion,$descripcion, $advertencias, $caducidad, $_FILES['imagen']['tmp_name']);
             header("Location: " . BASE_URL . 'panel');
         } else {
-            $this->modelador->nuevo($nombre,$modo,$composicion,$descripcion);
+            $this->modelador->nuevo($nombre,$modo,$composicion,$descripcion,$advertencias,$caducidad);
         header("Location: " . BASE_URL . 'panel');}
     }
 
@@ -60,12 +62,14 @@ class Control {
         $modo = $_POST['modo'];
         $composicion = $_POST['composicion'];
         $descripcion = $_POST['descripcion'];
+        $advertencias = $_POST['advertencias'];
+        $caducidad = $_POST['caducidad'];
 
         if($_FILES['imagen']['type'] == "image/jpg" || $_FILES['imagen']['type'] == "image/jpeg" || $_FILES['imagen']['type'] == "image/png"){
-            $this->modelador->guardarmodificado($id,$nombre,$modo,$composicion,$descripcion,  $_FILES['imagen']['tmp_name']);
+            $this->modelador->guardarmodificado($id,$nombre,$modo,$composicion,$descripcion, $advertencias, $caducidad,  $_FILES['imagen']['tmp_name']);
             header("Location: " . BASE_URL . 'panel');
         } else {
-            $this->modelador->guardarmodificado($id,$nombre,$modo,$composicion,$descripcion);
+            $this->modelador->guardarmodificado($id,$nombre,$modo,$composicion,$descripcion,$advertencias,$caducidad);
         header("Location: " . BASE_URL . 'panel');}
     }
 
