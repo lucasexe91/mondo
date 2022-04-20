@@ -47,7 +47,7 @@
                     <label for="floatingInput">Caducidad</label>
                 </div>
                 <div class="mb-3">
-                    <label for="formFile" class="form-label">Imagen</label>
+                    <label for="formFile" class="form-label">Imagen (Si no se carga una imagen nueva, queda la anterior)</label>
                     <input class="form-control" type="file" id="formFile" name="imagen" value="{$producto->imagen}">
                 </div>
                 <a href="panel" class="btn btn-outline-danger">Cancelar</a>

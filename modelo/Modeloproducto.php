@@ -45,6 +45,7 @@ class modeloproducto extends Modelo {
             $query = $this->getDb()->prepare('UPDATE productos SET nombre = ?, mododeuso = ?, composicion = ?, descripcion = ?, advertencias=?, caducidad=? WHERE id = ?');
             $query->execute([$nombre,$modo,$composicion,$descripcion,$advertencias,$caducidad,$id]);
         }else{
+            //<---
             $query = $this->getDb()->prepare('UPDATE productos SET nombre = ?, mododeuso = ?, composicion = ?, descripcion = ?, advertencias=?, caducidad=?, imagen = ? WHERE id = ?');
             $query->execute([$nombre,$modo,$composicion,$descripcion,$advertencias,$caducidad,$pathImg,$id]);
         }
