@@ -35,12 +35,13 @@ class Control {
         $descripcion = $_POST['descripcion'];
         $advertencias = $_POST['advertencias'];
         $caducidad = $_POST['caducidad'];
+        $otrainfo = $_POST['otrainfo'];
 
         if($_FILES['imagen']['type'] == "image/jpg" || $_FILES['imagen']['type'] == "image/jpeg" || $_FILES['imagen']['type'] == "image/png"){
-            $this->modelador->nuevo($nombre,$modo,$composicion,$descripcion, $advertencias, $caducidad, $_FILES['imagen']['tmp_name']);
+            $this->modelador->nuevo($nombre,$modo,$composicion,$descripcion, $advertencias, $caducidad,$otrainfo, $_FILES['imagen']['tmp_name']);
             header("Location: " . BASE_URL . 'panel');
         } else {
-            $this->modelador->nuevo($nombre,$modo,$composicion,$descripcion,$advertencias,$caducidad);
+            $this->modelador->nuevo($nombre,$modo,$composicion,$descripcion,$advertencias,$caducidad,$otrainfo);
         header("Location: " . BASE_URL . 'panel');}
     }
 
@@ -64,12 +65,12 @@ class Control {
         $descripcion = $_POST['descripcion'];
         $advertencias = $_POST['advertencias'];
         $caducidad = $_POST['caducidad'];
-
+        $otrainfo = $_POST['otrainfo'];
         if($_FILES['imagen']['type'] == "image/jpg" || $_FILES['imagen']['type'] == "image/jpeg" || $_FILES['imagen']['type'] == "image/png"){
-            $this->modelador->guardarmodificado($id,$nombre,$modo,$composicion,$descripcion, $advertencias, $caducidad,  $_FILES['imagen']['tmp_name']);
+            $this->modelador->guardarmodificado($id,$nombre,$modo,$composicion,$descripcion, $advertencias, $caducidad,$otrainfo,  $_FILES['imagen']['tmp_name']);
             header("Location: " . BASE_URL . 'panel');
         } else {
-            $this->modelador->guardarmodificado($id,$nombre,$modo,$composicion,$descripcion,$advertencias,$caducidad);
+            $this->modelador->guardarmodificado($id,$nombre,$modo,$composicion,$descripcion,$advertencias,$caducidad,$otrainfo);
         header("Location: " . BASE_URL . 'panel');}
     }
 

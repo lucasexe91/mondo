@@ -27,27 +27,27 @@ class modeloproducto extends Modelo {
     }
 
     //crea un producto nuevo
-    function nuevo($nombre,$modo,$composicion,$descripcion,$advertencias,$caducidad,$image = NULL){
+    function nuevo($nombre,$modo,$composicion,$descripcion,$advertencias,$caducidad,$otrainfo,$image = NULL){
         $pathImg = null;
         if ($image)
             $pathImg = $this->uploadImage($image);
 
-        $query = $this->getDb()->prepare( 'INSERT INTO productos (nombre, mododeuso, composicion, descripcion, advertencias, caducidad, imagen) VALUES(?,?,?,?,?,?,?)');
-        $query->execute([$nombre,$modo,$composicion,$descripcion,$advertencias,$caducidad,$pathImg]);
+        $query = $this->getDb()->prepare( 'INSERT INTO productos (nombre, mododeuso, composicion, descripcion, advertencias, caducidad, otrainfo, imagen) VALUES(?,?,?,?,?,?,?,?)');
+        $query->execute([$nombre,$modo,$composicion,$descripcion,$advertencias,$caducidad,$otrainfo,$pathImg]);
     }
 
     //guarda un producto por id
-    function guardarmodificado($id,$nombre,$modo,$composicion,$descripcion,$advertencias,$caducidad,$image = NULL){
+    function guardarmodificado($id,$nombre,$modo,$composicion,$descripcion,$advertencias,$caducidad,$otrainfo,$image = NULL){
         $pathImg = null;
         if ($image)
             $pathImg = $this->uploadImage($image);
         if ($pathImg == NULL){
-            $query = $this->getDb()->prepare('UPDATE productos SET nombre = ?, mododeuso = ?, composicion = ?, descripcion = ?, advertencias=?, caducidad=? WHERE id = ?');
-            $query->execute([$nombre,$modo,$composicion,$descripcion,$advertencias,$caducidad,$id]);
+            $query = $this->getDb()->prepare('UPDATE productos SET nombre = ?, mododeuso = ?, composicion = ?, descripcion = ?, advertencias=?, caducidad=?, otrainfo=? WHERE id = ?');
+            $query->execute([$nombre,$modo,$composicion,$descripcion,$advertencias,$caducidad,$otrainfo,$id]);
         }else{
             //<---
-            $query = $this->getDb()->prepare('UPDATE productos SET nombre = ?, mododeuso = ?, composicion = ?, descripcion = ?, advertencias=?, caducidad=?, imagen = ? WHERE id = ?');
-            $query->execute([$nombre,$modo,$composicion,$descripcion,$advertencias,$caducidad,$pathImg,$id]);
+            $query = $this->getDb()->prepare('UPDATE productos SET nombre = ?, mododeuso = ?, composicion = ?, descripcion = ?, advertencias=?, caducidad=?, otrainfo=?, imagen = ? WHERE id = ?');
+            $query->execute([$nombre,$modo,$composicion,$descripcion,$advertencias,$caducidad,$otrainfo,$pathImg,$id]);
         }
     }
 

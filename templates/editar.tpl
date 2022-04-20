@@ -16,6 +16,8 @@
             <p class="card-text">{$producto->advertencias}</p>
             <h5>Caducidad</h5>
             <p class="card-text">{$producto->caducidad}</p>
+            <h5>Otra información</h5>
+            <p class="card-text">{$producto->otrainfo}</p>
             <br>
         </div>
         <div class="col">
@@ -45,6 +47,10 @@
                 <div class="form-floating mb-3">
                     <textarea type="caducidad" class="form-control" id="floatingTextarea2"  placeholder="Caducidad" name="caducidad" style="height: 100px">{$producto->caducidad}</textarea>
                     <label for="floatingInput">Caducidad</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea type="otrainfo" class="form-control" id="floatingTextarea2"  placeholder="Otra información" name="otrainfo" style="height: 100px">{$producto->otrainfo}</textarea>
+                    <label for="floatingInput">Otra información</label>
                 </div>
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Imagen (Si no se carga una imagen nueva, queda la anterior)</label>

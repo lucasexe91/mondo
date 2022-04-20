@@ -21,6 +21,7 @@
       <h5>Composición: <small class="text-muted">{$producto->composicion}</small></h5>
       <h5>Advertencias: <small class="text-muted">{$producto->advertencias}</small></h5>
       <h5>Caducidad: <small class="text-muted">{$producto->caducidad}</small></h5>
+      <h5>Otra información: <small class="text-muted">{$producto->otrainfo}</small></h5>
     </div>
     <br>
     <div class="d-flex justify-content-center">

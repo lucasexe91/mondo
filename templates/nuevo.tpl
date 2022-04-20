@@ -30,6 +30,10 @@
                     <textarea type="caducidad" class="form-control" id="floatingTextarea2"  placeholder="Caducidad" name="caducidad" style="height: 100px"></textarea>
                     <label for="floatingInput">Caducidad</label>
                 </div>
+                <div class="form-floating mb-3">
+                    <textarea type="otrainfo" class="form-control" id="floatingTextarea2"  placeholder="Otra información" name="otrainfo" style="height: 100px"></textarea>
+                    <label for="floatingInput">Otra información</label>
+                </div>
             <div class="mb-3">
                 <label for="formFile" class="form-label">Imagen</label>
                 <input class="form-control" type="file" id="formFile" name="imagen">
