@@ -13,13 +13,13 @@ class Modelo {
         $host = 'localhost';
         $userName = 'root';
         $password = '';
-        $database = 'mondo';
+        $database = 'c2520563_mondomondo';
 
         try {
             $db = new PDO("mysql:host=$host;dbname=$database;charset=utf8", $userName, $password);
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
         } catch (Exception $e) {
-            echo "error al conectarse a la base de datos D:";
+            var_dump($e);
         }
 
         return $db;

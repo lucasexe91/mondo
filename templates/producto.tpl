@@ -25,7 +25,7 @@
     </div>
     <br>
     <div class="d-flex justify-content-center">
-      <img src="images/footermondo.png"  alt="footermondo" style="width: 400px;">
+      <img class="img-fluid" src="images/footermondo.png"  alt="footermondo">
     </div>
     <br>
     {literal}
